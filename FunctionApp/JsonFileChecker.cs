@@ -19,7 +19,7 @@ namespace FunctionApp
                 OutPutModel model;
                 ListPrices listPrice = getListPrice();
 
-                CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://globalconnectioncenter.blob.core.windows.net"), new StorageCredentials("globalconnectioncenter", "R6+/rKdvZH9wtiO4ALXVGjd6IYO4aY7mrAK6MMCacWCKg4+HucwQQNLhNoVdw/3uU6ztwof/4NsWauu2p5ZS2A=="));
+                CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://globalconnectioncenter.blob.core.windows.net"), new StorageCredentials("globalconnectioncenter", ""));
 
                 //Get a reference to the container.
                 CloudBlobContainer container = blobClient.GetContainerReference("pricemapingfiles");
@@ -111,7 +111,7 @@ namespace FunctionApp
                 sb.Append(m.MeterID + ":" + "not find!");
                 sb.Append("\r\n");
             }
-            Email mail = new Email("happy366days@outlook.com", "User@123");
+            Email mail = new Email("happy366days@outlook.com", "");
             mail.SendMail("109880678@qq.com", "Meters Not Find", sb.ToString());
         }
 
